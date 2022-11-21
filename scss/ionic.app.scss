@@ -1,0 +1,1437 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+http://www.colourco.de/none/%23ffffff%2C%23f8f8f8%2C%23387ef5%2C%2311c1f3%2C%2333cd5f%2C%23ffc900%2C%23ef473a%2C%23886aea%2C%23444444
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+$grey: #7b7b7b;
+
+$grey2: #cccccc;
+
+/*
+open this url to see these colors
+http://www.colourco.de/none/%23ffffff%2C%23ffffff%2C%231f4a19%2C%23f5f5f5%2C%23fecd08%2C%23fec200%2C%23ef473a%2C%2345b312%2C%23444444
+*/
+$pinkbike-red:         #d41f25;
+$dark:                 #3f4041;
+$energized:            #fec200 !default; // yellow
+$calm:                 #f5f5f5 !default; // grey
+$button-calm-text:     #3f4041 !default;
+$positive:             #1f4a19 !default; // green
+$button-positive-text: #fff !default;
+$balanced:             #fecd08 !default; // yellow
+$button-balanced-text: #4b3c01 !default;
+$stable:               #ffffff !default; // white
+$button-stable-text:   #54934b !default;
+$royal:                #45b312 !default; // bright green
+$button-royal-text:    #ffffff !default;
+$blue:                 #1493ff !default; // bright blue
+$button-blue-text:     #ffffff !default;
+$assertive:            #ef473a !default; // red
+
+$modal-inset-mode-break-point: 2000px;
+
+// status colors:
+$all-good-color:    #225f06;
+$minor-color:       #fc0;
+$significant-color: #ff8500;
+$closed-color:      #be0014;
+
+// conditions colors:
+$unknown-color:      #f0f;
+$snow-groomed-color: #7C88FF;
+$snow-packed-color:  #00ccff;
+$snow-covered-color: #1493ff;
+$snow-inadequate-color: #465e73;
+$freeze-thaw-color:  #56dbca;
+$icey-color:         #6bbaf0;
+$wet-color:          #33ff00;
+$mud-snow-color:     #630;
+$variable-color:     #669900;
+$mostly-dry-color:   #690;
+$dry-color:          #ffcc00;
+$very-dry-color:     #be0014;
+$ideal-color:        #225f06;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+$tfPaddingVertical: 14px;
+$tfPaddingHorizontal: 17px;
+$tfTextRightPadding: 10px;
+
+$tfSlimPaddingVertical: 10px;
+$tfSlimPaddingHorizontal: 14px;
+$tfSlimTextRightPadding: 10px;
+
+.platform-ios ion-side-menu ion-content.has-header {
+  top: calc(constant(safe-area-inset-top) + 44px) !important;
+  top: calc(env(safe-area-inset-top) + 44px) !important;
+}
+
+.tf-padding-horizontal {
+  padding-left:   $tfPaddingHorizontal;
+  padding-right:  $tfPaddingHorizontal;
+}
+.tf-padding-vertical {
+  padding-top:    $tfPaddingVertical;
+  padding-bottom: $tfPaddingVertical;
+}
+.tf-padding {
+  @extend .tf-padding-horizontal;
+  @extend .tf-padding-vertical;
+}
+.tf-text-padding-horizontal {
+  padding-left: $tfPaddingHorizontal;
+  // right column has a little less padding to account for ragged right left aligned text
+  padding-right: $tfTextRightPadding;
+
+  &.center {
+    padding-right: $tfPaddingHorizontal;
+  }
+}
+.tf-text-padding-vertical {
+  @extend .tf-padding-vertical;
+}
+.tf-text-padding {
+  @extend .tf-text-padding-horizontal;
+  @extend .tf-text-padding-vertical;
+  line-height: 1.5em;
+}
+
+.tf-slim-padding {
+  padding-left:   $tfSlimPaddingHorizontal;
+  padding-right:  $tfSlimPaddingHorizontal;
+  padding-top:    $tfSlimPaddingVertical;
+  padding-bottom: $tfSlimPaddingVertical;
+}
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+a, a:visited {
+  color: #54934b;
+}
+.listLinks .item a:visited {
+  color: inherit;
+}
+.item-icon-left img.icon {
+  padding: 10px 6px 6px 0;
+  max-width: 36px;
+  height: auto;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+progress {
+  margin: 7px auto 0;
+}
+
+.info {
+  padding: 10px 0;
+
+  .button:not(.button-small) {
+    min-width: 0;
+    min-height: 34px !important;
+    text-align: center !important;
+    line-height: 32px;
+
+    .icon:before {
+      line-height: 32px;
+    }
+  }
+}
+
+.platform-ios ion-icon.android {
+  display: none !important;
+}
+.platform-android ion-icon.ios {
+  display: none !important;
+}
+
+.info-section {
+  padding: 0 9px;
+  &.loading {
+    visibility: hidden;
+  }
+
+  + .info-section {
+    margin-top: 8px;
+  }
+}
+
+.loading {
+  visibility: hidden;
+}
+
+.info-section-with-columns {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+
+  display: flex;
+  align-items: center;
+
+  .left {
+    > .icon {
+      font-size: 30px;
+      float: left;
+      margin-right: 10px;
+    }
+  }
+  .main {
+    //background: pink;
+    -webkit-flex: 1;
+    flex:1;
+
+    padding: 2px 0 3px;
+  }
+  .right {
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: end;
+
+    //background: green;
+    > .icon:before {
+      font-size: 30px;
+      float: left;
+      margin-left: 10px;
+    }
+
+    > .button {
+      margin-left: 10px;
+    }
+  }
+
+  .ion-navicon {
+    color: $grey;
+  }
+
+
+  .name {
+    font-size: 16px;
+    line-height: 22px;
+
+  }
+}
+
+.info-section-stats {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: space-between;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .stat-filler {
+    -webkit-flex-basis: 20%;
+    //display: none;
+  }
+
+  //-webkit-justify-content: center;
+
+  padding: 0 9px;
+
+  .stat-large-icon {
+    display: inline-block;
+    font-size: 2em;
+    margin-left: 0;
+  }
+
+  .stat-value {
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 16px;
+    height: 18px;
+  }
+
+  .stat-units {
+    display: inline-block;
+    //font-size: .9em;
+    color: #777;
+    line-height: 18px;
+    margin-left: 1px;
+  }
+
+  .stat-label {
+    display: inline-block;
+    //font-weight: bold;
+    font-size: .75em;
+    text-transform: uppercase;
+    margin-left: .3em;
+    line-height: 18px;
+  }
+
+  .stat-label-icon {
+    display: block;
+    text-align: center;
+    width: 100%;
+
+
+    font-size: 1.2em;
+
+    height: 18px;
+    line-height: 16px;
+
+    i {
+      color: lighten($dark, 5%);
+      -webkit-transform: translateY(-.1em);
+      display: block;
+      font-size: 1em;
+      height: 16px;
+      margin: auto;
+    }
+  }
+
+  .stat-value-over {
+    display: block;
+    font-size: 1.2em;
+    line-height: 16px;
+    height: 18px;
+  }
+
+  .stat-label-under {
+    display: block;
+    text-transform: uppercase;
+    font-size: .65em;
+    line-height: 12px;
+    width: 100%;
+  }
+
+  .stat-value-under {
+    //font-weight: bold;
+    display: block;
+    text-transform: uppercase;
+    font-size: .85em;
+    line-height: 12px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.info-section-buttons {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: space-between;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 2px 6px;
+
+ button {
+   flex: 1;
+   margin: 6px;
+ }
+}
+
+.profile-section {
+  clear: both;
+
+  padding-left: 11px;
+  padding-right: 11px;
+
+  tf-elevation-profile {
+    height: 70px;
+  }
+
+  //margin-left: 4px;
+  //margin-right: 4px;
+
+  .info-section + & {
+    margin-top: 0;
+  }
+
+  + .info-section {
+    margin-top: 10px;
+  }
+}
+
+.info-section-box-stats {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: space-between;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > * {
+    -webkit-flex: 1;
+    border-left: 1px solid #e3e3e3;
+    text-align: center;
+    min-height: 6em;
+
+    &:first-child {
+      border-left: 0;
+    }
+  }
+
+  .box-label {
+    font-size: .7em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: .7em 0 1em;
+  }
+
+  .box-value {
+    font-size: 2em;
+    font-weight: 100;
+  }
+
+  .box-units {
+    margin-top: .2em;
+    font-size: .8em;
+    color: $grey;
+  }
+}
+
+.info-window-title {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 0 9px 2px;
+}
+.info-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 5px;
+}
+.info-json-style .main {
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.3em;
+  margin-left: -1px;
+}
+.info-json-style .top {
+  font-weight: bold;
+}
+.info-fields > div:first-child:last-child {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+}
+
+
+#side-menu-bg {
+  display: none;
+  background-color: $dark;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  display: block;
+}
+ion-side-menus {
+  background-color: transparent !important;
+}
+
+ion-side-menu {
+  .platform-ios & .has-header {
+    top: 65px !important;
+  }
+
+  .platform-android & .has-header {
+    top: 57px;
+  }
+}
+
+.platform-android .has-header {
+  top: 56px;
+}
+.platform-android ion-header-bar.bar {
+  height: 56px;
+}
+.platform-android ion-header-bar.bar .title {
+  line-height: 56px;
+}
+.platform-android .bar .title {
+  line-height: 56px;
+}
+
+.settings-description {
+  padding-top: .5em;
+}
+.settings-section + .settings-section h4 {
+  margin-top: 40px;
+}
+
+.menu .bar-dark {
+  background-color: #000000 !important;
+}
+.dark {
+  background-color: $dark !important;
+  color: #ffffff;
+  .scroll-content {
+    background-color: $dark !important;
+  }
+  .item {
+    background-color: $dark;
+    border: none;
+    border-top: 1px solid #464646;
+    border-bottom: 2px solid #333333;
+    color: #F0F1F1;
+    max-height: none;
+    a {
+      background-color: transparent;
+    }
+    &:last-child {
+      border-bottom: 1px solid #333333;
+    }
+    &.current{ background-color:darken( $dark, 10% ) !important;
+      border-top: 1px solid #464646 !important;
+      border-bottom: 2px solid #333333 !important;
+      p,h3{opacity: .7;}
+    }
+  }
+  .item-assertive {
+    background-color: $assertive;
+  }
+  .item-energized {
+    background-color: $energized;
+    color: #000000;
+  }
+  .item-divider {
+    background: lighten($dark, 10%);
+  }
+  h2,
+  h3,
+  p,
+  a {
+    color: #F0F1F1;
+  }
+}
+.dark .item .item-content.activated {
+  background-color: $energized !important;
+  color: #000;
+}
+.dark .tabs {
+  background: $dark !important;
+  color: #ffffff;
+  border-bottom: 0!important;
+  padding-top: 0!important;
+}
+.dark .tab-item {
+  padding-top: 2px!important;
+  max-width: 200px !important;
+
+  .icon {
+    margin-top: 5px;
+    margin-bottom: 1px;
+    height: 22px;
+    font-size: 22px;
+    color: #fff !important;
+  }
+
+  .badge {
+    padding: 0 3px;
+    line-height: 1.2em;
+    margin-top: 1px;
+    border-radius: 3px;
+  }
+
+  //text-transform: uppercase;
+}
+.dark .tab-item-active {
+  background-color: $energized !important;
+  color: #000000;
+  margin-top: 0!important;
+  border:none!important;
+
+  .icon {
+    color: #000 !important;
+  }
+}
+
+.tabs-light .tab-item {
+  .icon {
+    margin-top: 5px;
+    margin-bottom: 1px;
+    height: 22px;
+    font-size: 22px;
+  }
+
+  .badge {
+    padding: 0 3px;
+    line-height: 1.2em;
+    margin-top: 1px;
+    border-radius: 3px;
+  }
+}
+.tabs-light .tab-item-active {
+  color: #54934b !important;
+
+  .icon {
+    color: #54934b !important;
+  }
+}
+
+.tf-share-button {
+  .ion-ios-upload-outline, .ion-android-share-alt {
+    display: none;
+  }
+
+  .platform-ios & .ion-ios-upload-outline {
+    display: inline-block;
+  }
+
+  .platform-android & .ion-android-share-alt {
+    display: inline-block;
+  }
+}
+.tf-share-button.tf-button-icon-top {
+  .ion-ios-upload-outline, .ion-android-share-alt {
+    display: none !important;
+  }
+
+  .platform-ios & .ion-ios-upload-outline {
+    display: block !important;
+  }
+
+  .platform-android & .ion-android-share-alt {
+    display: block !important;
+  }
+}
+
+.tf-back-button {
+  .icon {
+    display: none;
+  }
+
+  .platform-ios & .ion-ios-arrow-back {
+    display: block;
+  }
+
+  .platform-android & .ion-android-arrow-back {
+    display: block;
+  }
+}
+
+map-statistic {
+  display: block;
+  padding: 10px;
+  .counts {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .count {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+    .label {
+      display: block;
+      font-weight: bold;
+    }
+    .value {
+    }
+  }
+  .times {
+    width: 100%;
+  }
+  .times th {
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+.bottom-tabs {
+  margin-bottom: $tabs-height;
+}
+.top-tabs {
+  margin-top: $tabs-height;
+}
+.tabs-top .tabs {
+  top: 56px;
+}
+
+.larger {
+  font-size: 2em;
+}
+.large {
+  font-size: 1.5em;
+}
+.small {
+  font-size: 0.8em;
+}
+.medium {
+  font-size: 1.1em;
+}
+.grey, h3 {
+  color: $grey;
+}
+.grey2 {
+  color: $grey2;
+}
+.center {
+  text-align: center;
+}
+#trailstats.label {
+  margin-top: 3px;
+}
+.photo img {
+  max-width: 100%;
+  height: auto;
+}
+.info-location .photo img {
+  height: auto!important;
+}
+.no-padding {
+  padding: 0!important;
+}
+.item.no-padding > .item-content {
+  padding:0!important;
+}
+.ridelogItem .item.small-padding {
+  border-width: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.ridelogItem .item-avatar {
+  padding-bottom: 8px;
+}
+.item-avatar .icon-premium {
+  position: absolute;
+  left: 10px;
+}
+
+.split-view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-direction: column;
+  flex-direction: column;
+
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+
+  min-height: 85vh;
+
+  .platform-ios & {
+    min-height: calc(100vh - 64px);
+  }
+
+  .platform-android & {
+    min-height: calc(100vh - 44px);
+  }
+}
+
+.map-info {
+  height: 0;
+  transition: height 0.5s ease;
+
+  ion-scroll {
+    max-height: 190px;
+  }
+}
+
+.progress {
+  text-align: center;
+  font-size: 2.2em;
+  margin-top: 1em;
+}
+
+.bar-subheader {
+  height: 28px;
+}
+.has-subheader, .has-search-bar {
+  top: 88px;
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .has-header.has-search-bar {
+  top: calc(env(safe-area-inset-top) + 88px);
+}
+
+.tf-notification-bar {
+  text-align: center;
+  padding: .3em 1em;
+  //color: #fff;
+  background: $light;
+
+  &.bottom-item, &.bottom-item-add, &.map-notice {
+    padding: .3em 1em calc(constant(safe-area-inset-bottom));
+    padding: .3em 1em calc(env(safe-area-inset-bottom));
+  }
+
+  &.bar-positive {
+    color: $light;
+    background: $positive;
+  }
+  &.bar-balanced {
+    color: $button-balanced-text;
+    background: $balanced;
+  }
+  &.bar-dark {
+    color: $light;
+    background: $dark;
+  }
+  &.bar-calm {
+    color: $dark;
+    background: $calm;
+  }
+  &.bar-stable {
+    color: $dark;
+    background: $stable;
+  }
+  &.bar-assertive {
+    color: $light;
+    background: $assertive;
+  }
+  &.bar-blue {
+    color: $button-blue-text;
+    background: $blue;
+  }
+
+  &.bar-slim {
+    font-size: .85em;
+    text-transform: uppercase;
+    padding: .2em;
+  }
+}
+
+.map-notice {
+  position: relative;
+  z-index: 110;
+  bottom: 0;
+  width: 100%;
+}
+.map-notice.bottom {
+  position: absolute;
+}
+
+.rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  li {
+    padding: 1px;
+    color: #ddd;
+    font-size: 24px;
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
+    &.filled {
+      color: $energized;
+    }
+  }
+}
+.ratingModal .rating li {
+  font-size: 44px;
+}
+
+ion-list .info-section-stats {
+  padding: 0;
+  font-size: 0.7em;
+}
+
+.bar-incontent {
+  position: relative;
+}
+
+#intro {
+  .slider {
+    height: 100%;
+  }
+  .slider-slide {
+    padding-top: 80px;
+    color: #fff;
+    background-color: #3f4041;
+    text-align: center;
+  }
+  .slider-slide img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .slider-pager .slider-pager-page {
+    color: #fff;
+  }
+}
+
+#trailstatsrow {
+  padding: 0;
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #E3E3E3;
+  .col {
+    text-align: center;
+    border-right: 1px solid #E3E3E3;
+    padding: 10px;
+  }
+  .col:last-child {
+    border-right: none;
+  }
+}
+
+#traildetails, .detailtable {
+  table {
+    width:100%;
+  }
+  td {
+    padding: 5px;
+  }
+  td:first-child {
+    padding-left: 0;
+    width: 100px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+#trailtext p:last-child {
+  margin-bottom: 0;
+}
+
+.tf-region .info-section-stats {
+  padding: 0 2px;
+}
+
+.box {
+  background-color: #f2f2f2;
+}
+
+.bottomborder {
+  border-bottom: 1px solid #E3E3E3;
+}
+.padding-vertical {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.item.smallpadding {
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+
+#map-background {
+  //display: none;
+  background: $dark;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  //bottom: 0;
+  z-index: -5;
+
+  .platform-ios & {
+    height: 45px;
+  }
+
+  .platform-android & {
+    height: 45px;
+  }
+
+  &.visible {
+    height: 100%;
+    //display: block;
+  }
+}
+
+#trailforks-boot-background {
+  //display: none;
+  background: $dark;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding-left: 4em;
+  color: #2e2f30;
+  z-index: 400;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+.tf-filter-bar {
+  margin-top: -1px;
+  //padding-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid $positive !important;
+  height: 45px;
+
+  .button {
+      //background: $grey2 !important;
+      //border-color: $grey2 !important;
+    //padding: 0;
+
+    border-color: $positive !important;
+
+    color: #000 !important;
+
+    &.active, &.activated {
+    //background: #fff !important;
+    //border-color: #fff !important;
+      //color: $dark !important;
+
+      background: $positive !important;
+      color: $calm !important;
+    }
+  }
+}
+
+.tf-button-bar {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: space-between;
+
+  padding: $tfPaddingVertical $tfPaddingHorizontal;
+
+  > * {
+    -webkit-flex: 1;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: .5em !important;
+
+    padding-left: .1em;
+    padding-right: .1em;
+
+    &:first-child {
+      margin-left: 0em !important;
+    }
+  }
+}
+
+.button-pressed {
+  opacity: 0.4;
+}
+.button {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+.button.button-outline {
+  box-shadow: none;
+}
+
+// search clear button
+.button.button-icon.input-button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #bbb;
+}
+.button.button-icon.input-button:before {
+  font-size: 22px;
+}
+
+.tf-supporter-bar {
+  position: fixed;
+  bottom: 49px;
+  bottom: calc(49px + constant(safe-area-inset-bottom));
+  bottom: calc(49px + env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+
+  .item {
+    border: 0 !important;
+  }
+
+  .item-content {
+    padding: 0 !important;
+  }
+
+  .supporter-box {
+    background: $royal;
+    padding: $tfSlimPaddingVertical 3.5em $tfSlimPaddingVertical $tfSlimPaddingHorizontal;
+    font-size: 14px;
+
+    &:before {
+      font-family: 'trailforks';
+      content: '\e609';
+      font-size: 2.5em;
+      height: 1em;
+      line-height: 1em;
+      position: absolute;
+      margin-top: -.5em;
+      top: 50%;
+      right: .4em;
+      bottom: 0;
+      color: #fff;
+    }
+  }
+
+  .button-energized {
+    color: $dark !important;
+  }
+}
+
+.installed {
+  opacity: .5;
+}
+
+.if-wide {
+  // THIS DOES NOT WORK ON IPAD PRO. FOR SOME REASON IPAD PRO THINKS IT IS SMALLER
+  // THAN THIS.  I CANNOT COME UP WITH A CSS ONLY WORKAROUND
+  @media only screen and (max-device-width: 359px) {
+    display: none;
+  }
+}
+
+.tf-select-action {
+  .tf-select-action-value {
+    padding: 0 ($item-padding+15px) 0;
+    -webkit-flex: 1;
+    text-align: right;
+    display: block;
+    font-size: 13px;
+
+    &:after {
+      position: absolute;
+      top: 53%;
+      right: $item-padding;
+      margin-top: -3px;
+      width: 0;
+      height: 0;
+      border-top: 5px solid;
+      border-right: 5px solid rgba(0, 0, 0, 0);
+      border-left: 5px solid rgba(0, 0, 0, 0);
+      color: #999;
+      content: "";
+      pointer-events: none;
+    }
+  }
+}
+
+.button-bar .button {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.button .spinner svg {
+  width: 15px;
+  height: 15px;
+}
+.button .progress {
+  font-size: 1.5em;
+}
+
+.platform-android #lockOrientationSetting {
+  display: block;
+}
+
+tf-active-sync-bar {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+
+  &.open {
+    max-height: 60px;
+  }
+
+  &.started {
+    transition: max-height 500ms ease;
+
+    &.open {
+      transition-delay: 1000ms;
+    }
+  }
+
+  .tf-notification-bar {
+    text-align: left;
+
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .percentage {
+    margin-left: 5px;
+  }
+
+  .label {
+    -webkit-flex: 1;
+    flex:1;
+  }
+}
+
+.item-element-right {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  display: flex;
+  align-items: center;
+
+  > * {
+    -webkit-flex: 1;
+    flex:1;
+  }
+
+  .right-element {
+    font-size: 32px;
+    flex: 0 1 auto;
+  }
+}
+
+.description-text {
+  ul, ol {
+    list-style-type: decimal;
+    margin-left: 15px;
+  }
+  li {
+    margin: 5px 0;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+ion-popover-view.fit {
+  height: auto;
+}
+
+ion-popover-view.fit ion-content {
+  position: relative;
+}
+
+ion-popover-view.rightpopup {
+  left: auto!important;
+  right: 0!important;
+  width: 250px!important;
+}
+
+.platform-android ion-popover-view.fit {
+  margin-top: 5px;
+}
+
+.platform-android .android-hide {
+  display: none;
+}
+
+.platform-ios ion-popover-view.fit {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.platform-android .action-sheet .button {
+  padding-left: 10px;
+}
+
+.button-more {
+  width: 40px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.item-toggle.item-toggle-left {
+  padding-left: 80px;
+  padding-right: 0;
+}
+.item-toggle.item-toggle-left .toggle {
+  left: 16px;
+  right: auto;
+}
+
+.opacity30 {
+  opacity: 0.3;
+}
+.invisible {
+  visibility: hidden;
+}
+
+.fix-strange-a-padding .item-content {
+  padding: 16px 16px 16px 16px;
+}
+
+.route-archived-tag {
+  background: $grey2;
+  color: $dark;
+  border-radius: 5px;
+  padding: 1px 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.bar .buttons-right .button {
+  margin-left: 15px;
+}
+.status-buttons.button-bar > .button:last-child {
+  border-radius: 0;
+}
+.modal-11 {
+  z-index: 11;
+}
+.item-complex.energized .item-content {
+  background-color: $energized;
+  color: $dark;
+}
+.official-report-badge {
+  padding: 3px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 80%;
+}
+.badgesquare {
+  color: #ffffff;
+  padding: 2px 4px;
+  font-weight: normal;
+  border-radius: 1px;
+}
+#traildetails .badgesquare {
+  display: inline-block;
+}
+
+.slide-in-right {
+  -webkit-transform: translateX(100%);
+    transform: translateX(100%); }
+.slide-in-right.ng-enter, .slide-in-right > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+.slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
+  -webkit-transform: translateX(0);
+    transform: translateX(0); }
+.slide-in-right.ng-leave, .slide-in-right > .ng-leave {
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms; }
+
+
+#no-header-buttons {
+  position: absolute;
+  width: 100%;
+  z-index: 200;
+
+  .right {
+    position: absolute;
+    right: 0;
+  }
+
+  .platform-ios & {
+    margin-top: 22px;
+    margin-top: calc(constant(safe-area-inset-top) + 5px);
+    margin-top: calc(env(safe-area-inset-top) + 5px);
+  }
+
+  button i:before {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+#no-header-buttons.showbackground {
+  position: relative;
+  width: 100%;
+  height: 44px;
+  background-color: $positive;
+  border-bottom-width: 1px;
+}
+#no-header-buttons .icon {
+  color: #ffffff;
+  text-shadow: 0 2px rgba(0, 0, 0, 0.26);
+}
+
+.videolabel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $assertive;
+  color: #ffffff;
+  padding: 2px 5px;
+  font-size: 80%;
+}
+.inline-stats {
+  display: block;
+  text-align: left;
+
+  .stat {
+    display: inline-block;
+    padding-top: 5px;
+    margin-right: 5px;
+  }
+  .stat-value-under {
+    color: #7b7b7b;
+  }
+}
+
+.media-media-width img {
+  max-width: 100%;
+  height: auto;
+}
+.red {
+  color: #cc0000;
+}
+.button-premium {
+  color: #fec200;
+  background-color: #000000;
+}
+.bullet-list {
+  list-style-type: disc;
+  padding-left: 25px;
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+.bold {
+  font-weight: bold;
+}
+.apple-sign-in {
+  background-color: #000000!important;
+  background-image: url(../img/apple_signin.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 54px;
+  padding-top: 2px;
+  border-width: 0;
+  text-align: left;
+}
+.facebook-sign-in {
+  background-color: #3a559f!important;
+  background-image: url(../img/facebook.png);
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
+  background-size: 30px;
+  padding-left: 54px;
+  padding-top: 2px;
+  border-width: 0;
+  text-align: left;
+}
+
+.membership-badge {
+  padding: 1px 3px;
+  background-color: black;
+  border-radius: 4px;
+}
+
+.outside-black-banner {
+  background-color: #333333;
+  color: #ffffff;
+}
+.outside-black-banner2 {
+  background-color: #000000;
+}
+
+.platform-ios .bold-no-expand {
+  font-variation-settings: 'GRAD' 600;
+}
+
+.platform-android .bold-no-expand {
+  text-shadow: 0.12ex 0px;
+}
+
+.name {
+  word-break: break-all;
+}

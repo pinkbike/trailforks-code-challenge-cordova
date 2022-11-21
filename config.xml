@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="10000000" id="com.trailforks.test" ios-CFBundleVersion="01" version="1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Trailforks</name>
+    <description>
+        Trailforks test app
+    </description>
+    <author email="trailforks@pinkbike.com" href="http://www.trailforks.com/">
+        Pinkbike Dev Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="deployment-target" value="13.0" />
+    <preference name="android-minSdkVersion" value="22" />
+    <preference name="android-targetSdkVersion" value="30" />
+    <platform name="android">
+        <preference name="orientation" value="default" />
+        <preference name="AndroidLaunchMode" value="singleTask" />
+        <preference name="LoadUrlTimeoutValue" value="120000"/>
+        <access origin="cdvfile://*" />
+        <allow-intent href="cdvfile://*" />
+    </platform>
+    <plugin name="cordova-plugin-add-swift-support" spec="^2.0.2" />
+    <plugin name="cordova-plugin-ionic-webview" spec="~4.2.1" />
+    <plugin name="cordova-plugin-network-information" spec="https://github.com/PieterVanPoyer/cordova-plugin-network-information" />
+</widget>

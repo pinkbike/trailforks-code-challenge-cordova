@@ -1,0 +1,36 @@
+<ion-view>
+  <ion-header-bar class="bar-dark">
+    <h1 class="title">Trailforks Test</h1>
+  </ion-header-bar>
+
+  <ion-content>
+    <div ng-show="loading" class="progress">
+      <ion-spinner></ion-spinner>
+    </div>
+
+    <ion-refresher pulling-text="Refresh" on-refresh="refresh()"></ion-refresher>
+
+    <ion-list>
+      <ion-item ng-repeat="report in reports" class="report no-padding">
+        <div class="row padding">
+          <div class="col">
+            <i class="icon icon-status-{{ ::report.status }}" style="margin-right: 10px"></i>
+            <i class="icon icon-condition-{{ ::report.condition }}"></i>
+            <i ng-if="::report.latitude" class="icon ion-location"></i>
+            <i ng-if="::report.watchmen == 1" class="icon ion-star"></i>
+          </div>
+          <div class="col grey" style="text-align: right;">
+            {{ ::report.ts | date:"longDate" }}
+          </div>
+        </div>
+        <div ng-show="report.description" class="ng-hide padding description item-text-wrap">
+          <div class="padding-bottom">{{ ::report.description }}</div>
+        </div>
+        <div ng-show="report.username" class="padding item-text-wrap">
+          <div class="padding-bottom">By: {{ ::report.username }}</div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>

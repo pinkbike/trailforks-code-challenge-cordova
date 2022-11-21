@@ -1,0 +1,35 @@
+{
+  "name": "trailforks-map",
+  "version": "0.0.20",
+  "description": "trailforks-map: An Ionic project",
+  "dependencies": {
+    "q": "^1.5.1",
+    "xcode": "^3.0.0"
+  },
+  "devDependencies": {
+    "cordova-android": "^10.1.1",
+    "cordova-ios": "^6.2.0",
+    "cordova-plugin-add-swift-support": "^2.0.2",
+    "cordova-plugin-ionic-webview": "~4.2.1",
+    "cordova-plugin-network-information": "github:PieterVanPoyer/cordova-plugin-network-information"
+  },
+  "cordovaPlatforms": [
+    "ios",
+    {
+      "platform": "android",
+      "version": "6.4.0",
+      "locator": "android@6.4.0"
+    }
+  ],
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-add-swift-support": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-network-information": {}
+    }
+  }
+}
